@@ -1,0 +1,11 @@
+{
+  "name": "job-portal",
+  "private": true,
+  "description": "Monorepo root — run commands from /server or /client (see README).",
+  "scripts": {
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "start:server": "npm start --prefix server",
+    "build:client": "npm run build --prefix client"
+  }
+}
