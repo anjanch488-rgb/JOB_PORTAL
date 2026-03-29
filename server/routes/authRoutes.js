@@ -23,7 +23,7 @@ const loginValidation = [
   body('password').notEmpty(),
 ];
 
-router.post('/register', registerValidation, register);
+router.post('/api/auth/register', registerValidation, register);
 router.post('/login', loginValidation, login);
 router.get('/me', protect, me);
 router.put('/profile', protect, updateProfile);
