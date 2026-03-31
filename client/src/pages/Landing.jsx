@@ -9,7 +9,7 @@ export default function Landing() {
 
   return (
     <Layout>
-      <section className="relative overflow-hidden rounded-3xl glass-strong px-6 py-16 sm:px-12 sm:py-24">
+      <section className="relative overflow-hidden rounded-3xl glass-strong px-6 py-16 shadow-xl shadow-sky-500/10 sm:px-12 sm:py-24">
         <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-sky-400/30 blur-3xl dark:bg-indigo-500/20" />
         <div className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-indigo-400/25 blur-3xl dark:bg-sky-500/15" />
 
@@ -44,7 +44,7 @@ export default function Landing() {
             {isAuthenticated ? (
               <Link
                 to="/dashboard"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-95"
+                  className="btn-shine inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-95"
               >
                 Go to dashboard
                 <ArrowRight className="h-4 w-4" />
@@ -53,7 +53,7 @@ export default function Landing() {
               <>
                 <Link
                   to="/register"
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-95"
+                  className="btn-shine inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-95"
                 >
                   Get started
                   <ArrowRight className="h-4 w-4" />
@@ -81,20 +81,28 @@ export default function Landing() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25 }}
         >
-          <div className="glass rounded-2xl p-6">
+          <motion.div
+            className="glass card-tilt rounded-2xl p-6"
+            whileHover={{ scale: 1.015 }}
+            transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+          >
             <Users className="h-8 w-8 text-sky-600 dark:text-sky-400" />
             <h3 className="mt-3 font-semibold text-slate-900 dark:text-white">For job seekers</h3>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
               Profile, search & filters, one-click apply with cover letter, track status, and save listings.
             </p>
-          </div>
-          <div className="glass rounded-2xl p-6">
+          </motion.div>
+          <motion.div
+            className="glass card-tilt rounded-2xl p-6"
+            whileHover={{ scale: 1.015 }}
+            transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+          >
             <Briefcase className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
             <h3 className="mt-3 font-semibold text-slate-900 dark:text-white">For recruiters</h3>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
               Post and manage jobs, review applicants, and accept or reject with clear status tracking.
             </p>
-          </div>
+          </motion.div>
         </motion.div>
       </section>
     </Layout>
