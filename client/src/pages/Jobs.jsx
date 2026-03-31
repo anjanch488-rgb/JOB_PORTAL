@@ -112,8 +112,8 @@ export default function Jobs() {
       {!savedOnly && (
         <motion.form
           onSubmit={applyFilters}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           className="glass mb-8 grid gap-4 rounded-2xl p-4 sm:grid-cols-2 lg:grid-cols-4"
         >
           <div>
@@ -122,7 +122,7 @@ export default function Jobs() {
               name="search"
               defaultValue={search}
               placeholder="Title, company…"
-              className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+              className="input-modern px-3 py-2 text-sm"
             />
           </div>
           <div>
@@ -131,7 +131,7 @@ export default function Jobs() {
               name="location"
               defaultValue={location}
               placeholder="City, remote…"
-              className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+              className="input-modern px-3 py-2 text-sm"
             />
           </div>
           <div>
@@ -140,7 +140,7 @@ export default function Jobs() {
               name="role"
               defaultValue={role}
               placeholder="e.g. Engineer"
-              className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+              className="input-modern px-3 py-2 text-sm"
             />
           </div>
           <div>
@@ -149,13 +149,13 @@ export default function Jobs() {
               name="skills"
               defaultValue={skills}
               placeholder="React, Node"
-              className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-3 py-2 text-sm dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+              className="input-modern px-3 py-2 text-sm"
             />
           </div>
           <div className="sm:col-span-2 lg:col-span-4 flex justify-end">
             <button
               type="submit"
-              className="rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-md"
+              className="btn-shine rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-6 py-2 text-sm font-semibold text-white shadow-md"
             >
               Apply filters
             </button>
