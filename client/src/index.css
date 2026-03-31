@@ -16,6 +16,7 @@ html {
 body {
   font-family: var(--font-sans);
   @apply min-h-screen antialiased text-slate-800 bg-gradient-to-br from-slate-100 via-white to-sky-100;
+  background-attachment: fixed;
 }
 
 .dark body {
@@ -29,4 +30,120 @@ body {
 
 .glass-strong {
   @apply bg-white/85 dark:bg-slate-900/75 backdrop-blur-2xl border border-white/50 dark:border-slate-600/50;
+}
+
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora-bg::before,
+.aurora-bg::after {
+  content: "";
+  position: absolute;
+  width: 32rem;
+  height: 32rem;
+  filter: blur(80px);
+  border-radius: 9999px;
+  opacity: 0.45;
+  animation: floatOrb 16s ease-in-out infinite;
+}
+
+.aurora-bg::before {
+  top: -8rem;
+  left: -6rem;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.65), rgba(99, 102, 241, 0.55));
+}
+
+.aurora-bg::after {
+  right: -8rem;
+  bottom: -10rem;
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.5), rgba(56, 189, 248, 0.55));
+  animation-delay: -7s;
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  inset: -2px auto -2px -140%;
+  width: 120%;
+  transform: skewX(-20deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.38), transparent);
+  transition: left 0.7s ease;
+}
+
+.btn-shine:hover::before {
+  left: 140%;
+}
+
+.input-modern {
+  @apply mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-900 shadow-inner outline-none ring-sky-500/25 transition-all duration-200 placeholder:text-slate-400 focus:ring-2 focus:border-sky-300 dark:border-slate-600 dark:bg-slate-800/80 dark:text-white dark:placeholder:text-slate-500 dark:focus:border-sky-600;
+}
+
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card-tilt:hover {
+  transform: translateY(-4px) rotateX(1deg) rotateY(-1deg);
+  box-shadow: 0 24px 60px -24px rgba(37, 99, 235, 0.35);
+}
+
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(24px, -28px) scale(1.08);
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .aurora-bg::before,
+  .aurora-bg::after {
+    width: 22rem;
+    height: 22rem;
+    filter: blur(64px);
+    opacity: 0.28;
+    animation-duration: 20s;
+  }
+
+  .card-tilt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px -24px rgba(37, 99, 235, 0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .aurora-bg::before,
+  .aurora-bg::after,
+  .btn-shine::before {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .card-tilt,
+  .card-tilt:hover {
+    transform: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+  }
 }
