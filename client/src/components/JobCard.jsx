@@ -8,8 +8,9 @@ export default function JobCard({ job, index = 0 }) {
       layout
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -4, scale: 1.004 }}
       transition={{ delay: index * 0.04, duration: 0.35 }}
-      className="glass rounded-2xl p-5 transition hover:shadow-xl hover:shadow-sky-500/10"
+      className="glass card-tilt rounded-2xl p-5 transition hover:shadow-xl hover:shadow-sky-500/10"
     >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
@@ -41,7 +42,7 @@ export default function JobCard({ job, index = 0 }) {
         </div>
         <Link
           to={`/jobs/${job._id}`}
-          className="shrink-0 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-md transition hover:opacity-95"
+          className="btn-shine shrink-0 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-md transition hover:opacity-95"
         >
           View
         </Link>
