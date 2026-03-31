@@ -98,7 +98,7 @@ function DashboardCard({ to, icon: Icon, title, description, delay }) {
     >
       <Link
         to={to}
-        className="glass block h-full rounded-2xl p-6 transition hover:shadow-xl hover:shadow-sky-500/10"
+        className="glass card-tilt block h-full rounded-2xl p-6 transition hover:shadow-xl hover:shadow-sky-500/10"
       >
         <Icon className="h-8 w-8 text-sky-600 dark:text-sky-400" />
         <h2 className="mt-3 text-lg font-semibold text-slate-900 dark:text-white">{title}</h2>
