@@ -14,10 +14,10 @@ import { useAuth } from '../context/AuthContext.jsx';
 import { useTheme } from '../context/ThemeContext.jsx';
 
 const linkClass = ({ isActive }) =>
-  `rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+  `rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 ${
     isActive
-      ? 'bg-white/80 dark:bg-slate-800 text-brand-600 dark:text-sky-400 shadow-sm'
-      : 'text-slate-600 dark:text-slate-300 hover:bg-white/50 dark:hover:bg-slate-800/80'
+      ? 'bg-white/85 dark:bg-slate-800 text-brand-600 dark:text-sky-400 shadow-sm'
+      : 'text-slate-600 dark:text-slate-300 hover:bg-white/60 hover:-translate-y-0.5 dark:hover:bg-slate-800/80'
   }`;
 
 export default function Navbar() {
@@ -26,7 +26,7 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/30 dark:border-slate-800/80 glass">
+    <header className="sticky top-0 z-50 border-b border-white/30 dark:border-slate-800/80 glass-strong">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
           <motion.span
@@ -96,7 +96,7 @@ export default function Navbar() {
               </Link>
               <Link
                 to="/register"
-                className="inline-flex items-center gap-1 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-95"
+                className="btn-shine inline-flex items-center gap-1 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:opacity-95"
               >
                 <UserRound className="h-4 w-4" />
                 Sign up
