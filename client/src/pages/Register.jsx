@@ -59,7 +59,7 @@ export default function Register() {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-900 outline-none ring-sky-500/30 focus:ring-2 dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+                className="input-modern"
               />
             </div>
             <div>
@@ -69,7 +69,7 @@ export default function Register() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-900 outline-none ring-sky-500/30 focus:ring-2 dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+                className="input-modern"
               />
             </div>
             <div>
@@ -80,7 +80,7 @@ export default function Register() {
                 minLength={8}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-900 outline-none ring-sky-500/30 focus:ring-2 dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+                className="input-modern"
               />
             </div>
             <div>
@@ -113,7 +113,7 @@ export default function Register() {
                   type="text"
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
-                  className="mt-1 w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-slate-900 outline-none ring-sky-500/30 focus:ring-2 dark:border-slate-600 dark:bg-slate-800/80 dark:text-white"
+                  className="input-modern"
                   placeholder="Shown on your job posts"
                 />
               </div>
@@ -121,7 +121,7 @@ export default function Register() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 py-3 font-semibold text-white shadow-lg transition hover:opacity-95 disabled:opacity-60"
+              className="btn-shine w-full rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 py-3 font-semibold text-white shadow-lg transition hover:opacity-95 disabled:opacity-60"
             >
               {submitting ? 'Creating…' : 'Create account'}
             </button>
